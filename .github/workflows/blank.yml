@@ -8,7 +8,7 @@ on:
 
 jobs:
   stage1:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, phani]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
           # Add other commands for Stage 1 here
 
   stage2:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, phani]
     needs: stage1
     steps:
       - name: Checkout repository
