@@ -2,10 +2,10 @@ name: Print Environment Variables
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   print-env-vars:
     runs-on: ubuntu-latest
