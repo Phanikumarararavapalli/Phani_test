@@ -1,5 +1,4 @@
 name: Print Environment Variables
-
 on:
   push:
     branches:
