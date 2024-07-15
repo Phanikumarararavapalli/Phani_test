@@ -27,4 +27,4 @@ jobs:
           echo "Server URL: $GITHUB_SERVER_URL"
           echo "API URL: $GITHUB_API_URL"
           echo "GraphQL URL: $GITHUB_GRAPHQL_URL"
-          echo "My Secret Variable: ${{ secrets.USERNAME }}"
+          echo "My Secret Variable: $USERNAME"
