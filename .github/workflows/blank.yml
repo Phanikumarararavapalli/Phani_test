@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use runner environment variable
-        run: echo "Using environment variable ${{ var.USERNAME }}"
+        run: echo "Using environment variable ${{ vars.USERNAME }}"
         
