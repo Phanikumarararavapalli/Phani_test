@@ -1,18 +1,4 @@
 
-name: Print Environment Variables
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-jobs:
-  print-env-vars:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use runner environment variable
-        run: echo "Using environment variable ${{ vars.USERNAME }}"
         
 
 
