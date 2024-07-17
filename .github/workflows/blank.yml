@@ -11,7 +11,7 @@ jobs:
       - name: Check PR Title Format
         run: |
           title=$(jq -r '.pull_request.title' "$GITHUB_EVENT_PATH")
-          if [[ ! "$title" =~ ^(feat|fix|docs|test|ci|chore)!?(\\(.*\\))?!?:.*\\[JIRA-\\d+\\]$ ]]; then
-            echo "Invalid PR title format. Please follow the format: '(feat|fix|docs|test|ci|chore)!?(\\(.*\\))?!?: Your title [JIRA-123]'."
+          if [[ ! "$title" =~ ^(feat|fix|docs|test|ci|chore)(\([^)]*\))?:(.*) \[JIRA-[0-9]+\]$ ]]; then
+            echo "Invalid PR title format. Please follow the format: '(feat|fix|docs|test|ci|chore)(optional scope): Your title [JIRA-123]."
             exit 1
           fi
