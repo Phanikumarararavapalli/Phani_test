@@ -15,3 +15,6 @@ jobs:
 
       - name: Display runner information
         run: uname -a
+        
+      - name: Check current user
+        run: whoami
