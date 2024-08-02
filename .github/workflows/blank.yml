@@ -5,13 +5,13 @@ on: [push]
 jobs:
   build:
     runs-on: [self-hosted, devops_CICD_90]
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: echo "Hello, newworld!"
+        run: echo "Hello, neww-orld!"
 
       - name: Display runner information
         run: uname -a
