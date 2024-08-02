@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: [self-hosted, devops_CICD_90]
+    runs-on: devops_CICD_90
     
     steps:
       - name: Checkout code
