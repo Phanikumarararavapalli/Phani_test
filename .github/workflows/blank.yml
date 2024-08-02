@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: devops_CICD_90
+    runs-on: Abc
     
     steps:
       - name: Checkout code
