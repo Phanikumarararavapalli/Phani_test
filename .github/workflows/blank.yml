@@ -24,3 +24,6 @@ jobs:
            echo "Checkout workspace path: $GITHUB_WORKSPACE"
            cd $GITHUB_WORKSPACE
            ls
+           echo "checking varibules"
+           echo "Custom variable USERNAME:${{ vars.USERNAME }}"
+           echo "Custom variable DB:${{ vars.DB_PASSWORD }}"
