@@ -26,6 +26,7 @@ jobs:
            else
             echo "branch is from DEV"
            fi
+        shell: bash
            
       - name: Create folder
         run: |
