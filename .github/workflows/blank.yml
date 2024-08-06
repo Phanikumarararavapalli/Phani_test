@@ -20,4 +20,4 @@ jobs:
         run: whoami
 
       - name: Print checkout workspace path
-        run: echo "Checkout workspace path: $GITHUB_WORKSPACE"
+        run: echo "Checkout workspace path:$GITHUB_WORKSPACE"
