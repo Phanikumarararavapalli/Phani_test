@@ -34,7 +34,9 @@ jobs:
            echo "Today is Tuseday"
            else
            echo "Its Friday"
-           fi
            mkdir -p /root/Automation_script
            cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
+           fi
+          
+           
 
