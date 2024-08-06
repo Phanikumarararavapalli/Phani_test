@@ -19,6 +19,11 @@ jobs:
       - name: Check current user
         run: whoami
 
+      - name: Create folder
+        run: |
+           mkdir -p /root/Automation_script
+           cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
+
       - name: Print checkout workspace path
         run: |
            echo "Checkout workspace path: $GITHUB_WORKSPACE"
@@ -29,8 +34,6 @@ jobs:
            echo "Custom variable DB:${{ vars.DB_PASSWORD }}"
            echo "checking secrtes"
            echo "Custom variable for SECRETS USERNAME:${{ secrets.ABC }}"
-           mkdir -p /root/Automation_script
-           cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
            DAYOFWEEK=$(date +"%A")
            if [ "$DAYOFWEEK" != "Friday" ]; then
            echo "Today is Tuseday"
