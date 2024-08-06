@@ -21,7 +21,7 @@ jobs:
 
       - name: Check the branch is main or not
         run: |
-           if [[ "$GITHUB_REF" = "master" ]]; then
+           if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
             echo " branch is executed from main"
            else
             echo "branch is from DEV"
