@@ -21,7 +21,11 @@ jobs:
 
       - name: Check the branch is main or not
         run: |
-           if: github.ref == 'refs/heads/main'
+           if [[ "$GITHUB_REF" = "main" ]]; then
+            echo " branch is executed from main"
+           else
+            echo "branch is from DEV"
+           fi
            
       - name: Create folder
         run: |
