@@ -27,3 +27,5 @@ jobs:
            echo "checking varibules"
            echo "Custom variable USERNAME:${{ vars.USERNAME }}"
            echo "Custom variable DB:${{ vars.DB_PASSWORD }}"
+           echo "checking secrtes"
+           echo "Custom variable for SECRETS USERNAME:${{ secrets.ABC }}"
