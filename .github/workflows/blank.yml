@@ -31,7 +31,8 @@ jobs:
            echo "Custom variable for SECRETS USERNAME:${{ secrets.ABC }}"
            DAYOFWEEK=$(date +"%A")
            if [ "$DAYOFWEEK" != "Friday" ]; then
-           echo "Performance Testcase execution is skipped"
-           exit 0
+           echo "Today is Tuseday"
+           else
+           echo "Its Friday"
            fi
 
