@@ -29,3 +29,9 @@ jobs:
            echo "Custom variable DB:${{ vars.DB_PASSWORD }}"
            echo "checking secrtes"
            echo "Custom variable for SECRETS USERNAME:${{ secrets.ABC }}"
+           DAYOFWEEK=$(date +"%A")
+           if [ "$DAYOFWEEK" != "Friday" ]; then
+           echo "Performance Testcase execution is skipped"
+           exit 0
+           fi
+
