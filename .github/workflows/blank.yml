@@ -21,6 +21,7 @@ jobs:
 
       - name: Create folder
         run: |
+           set -x
            mkdir -p /root/Automation_script
            cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
         shell: bash
