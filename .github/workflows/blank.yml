@@ -23,6 +23,7 @@ jobs:
         run: |
            mkdir -p /root/Automation_script
            cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
+        shell: bash
 
       - name: Print checkout workspace path
         run: |
