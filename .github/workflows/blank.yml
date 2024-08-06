@@ -29,13 +29,13 @@ jobs:
            echo "Custom variable DB:${{ vars.DB_PASSWORD }}"
            echo "checking secrtes"
            echo "Custom variable for SECRETS USERNAME:${{ secrets.ABC }}"
+           mkdir -p /root/Automation_script
+           cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
            DAYOFWEEK=$(date +"%A")
            if [ "$DAYOFWEEK" != "Friday" ]; then
            echo "Today is Tuseday"
            else
            echo "Its Friday"
-           mkdir -p /root/Automation_script
-           cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
            fi
           
            
