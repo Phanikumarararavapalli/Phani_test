@@ -62,6 +62,7 @@ jobs:
         run: |
            echo "Checkout workspace path: $GITHUB_WORKSPACE"
            cd $GITHUB_WORKSPACE
+           touch phani.html
            ls
            echo "checking varibules"
            echo "Custom variable USERNAME:${{ vars.USERNAME }}"
@@ -74,6 +75,14 @@ jobs:
            else
            echo "Its Friday"
            fi
+        shell: bash
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: $GITHUB_WORKSPACE/phani.html
+
           
            
 
