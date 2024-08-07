@@ -76,7 +76,13 @@ jobs:
            echo "Its Friday"
            fi
         shell: bash
-
+      
+      - name: Verify file existence
+        run: |
+           echo "Verifying file existence..."
+           ls -la $GITHUB_WORKSPACE/phani.html
+        shell: bash
+      
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
