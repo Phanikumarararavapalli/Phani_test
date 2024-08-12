@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: Abc
 env:
-  CI_DEBUG_TRACE: true
+  - CI_DEBUG_TRACE: true
    
     steps:
       - name: Checkout code
@@ -93,4 +93,3 @@ env:
 
           
            
-
