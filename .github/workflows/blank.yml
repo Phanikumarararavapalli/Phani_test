@@ -5,7 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: Abc
-    
+env:
+  CI_DEBUG_TRACE: true
+   
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
