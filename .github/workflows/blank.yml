@@ -3,9 +3,20 @@ name: Simple Workflow
 on: [push]
 
 jobs:
-  build:
+  deployment_main:
     runs-on: Abc
-    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy application
+        run: echo "Deploying application..."
+
+  build:
+    needs: [deployment_main]
+    runs-on: Abc
+    env:
+      CI_DEBUG_TRACE: true
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -18,76 +29,3 @@ jobs:
         
       - name: Check current user
         run: whoami
-
-      - name: Check the branch is main or not
-        run: |
-           if [[ "$GITHUB_REF" = "refs/heads/master" ]]; then
-            echo " branch is executed from main"
-           else
-            echo "branch is from DEV"
-           fi
-        shell: bash
-           
-      - name: Create folder
-        run: |
-           set -x
-           mkdir -p /root/Automation_script
-           cp -rf /$GITHUB_WORKSPACE* /root/Automation_script/
-           echo "Run ID: $GITHUB_RUN_ID"
-           echo "Workflow: $GITHUB_WORKFLOW"
-           echo "Action: $GITHUB_ACTION"
-           echo "Actor: $GITHUB_ACTOR"
-           echo "Repository: $GITHUB_REPOSITORY"
-           echo "Repository Owner: $GITHUB_REPOSITORY_OWNER"
-           echo "Event Name: $GITHUB_EVENT_NAME"
-           echo "Event Path: $GITHUB_EVENT_PATH"
-           echo "Workspace: $GITHUB_WORKSPACE"
-           echo "SHA: $GITHUB_SHA"
-           echo "Ref: $GITHUB_REF"
-           echo "Ref Name: $GITHUB_REF_NAME"
-           echo "Ref Protected: $GITHUB_REF_PROTECTED"
-           echo "Ref Type: $GITHUB_REF_TYPE"
-           echo "Head Ref: $GITHUB_HEAD_REF"
-           echo "Base Ref: $GITHUB_BASE_REF"
-           echo "Job: $GITHUB_JOB"
-           echo "Run Attempt: $GITHUB_RUN_ATTEMPT"
-           echo "Workflow Ref: $GITHUB_WORKFLOW_REF"
-           echo "Workflow SHA: $GITHUB_WORKFLOW_SHA"
-           echo "Server URL: $GITHUB_SERVER_URL"
-           echo "API URL: $GITHUB_API_URL"
-           echo "GraphQL URL: $GITHUB_GRAPHQL_URL"
-        shell: bash
-
-      - name: Print checkout workspace path
-        run: |
-           echo "Checkout workspace path: $GITHUB_WORKSPACE"
-           cd $GITHUB_WORKSPACE
-           touch phani.html
-           ls
-           echo "checking varibules"
-           echo "Custom variable USERNAME:${{ vars.USERNAME }}"
-           echo "Custom variable DB:${{ vars.DB_PASSWORD }}"
-           echo "checking secrtes"
-           echo "Custom variable for SECRETS USERNAME:${{ secrets.ABC }}"
-           DAYOFWEEK=$(date +"%A")
-           if [ "$DAYOFWEEK" != "Friday" ]; then
-           echo "Today is Tuseday"
-           else
-           echo "Its Friday"
-           fi
-        shell: bash
-      
-      - name: Verify file existence
-        run: |
-           echo "Verifying file existence..."
-           ls -la $GITHUB_WORKSPACE/phani.html
-        shell: bash
-      
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: phani.html
-
-          
-           
